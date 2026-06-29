@@ -7,13 +7,13 @@ const skills = [
   { name: "Python", icon: "/icons/Python.svg" },
   { name: "NumPy", icon: "/icons/NumPy.svg" },
   { name: "Pandas", icon: "/icons/Pandas.svg" },
-  { name: "Scikit Learn", icon: "/icons/ScikitLearn.svg" },
+  { name: "Scikit Learn", icon: "/icons/scikitlearn.svg" },
   { name: "TensorFlow", icon: "/icons/TensorFlow.svg" },
 
   { name: "C", icon: "/icons/C.svg" },
   { name: "Java", icon: "/icons/Java.svg" },
   { name: "MySQL", icon: "/icons/MySQL.svg" },
-  { name: "VS Code", icon: "/icons/VSCode.svg" },
+  { name: "VS Code", icon: "/icons/vscode.svg" },
   { name: "GitHub", icon: "/icons/GitHub.svg" },
 ];
 
