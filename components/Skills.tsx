@@ -4,17 +4,17 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const skills = [
-  { name: "Python", icon: "/icons/python.svg" },
-  { name: "NumPy", icon: "/icons/numpy.svg" },
-  { name: "Pandas", icon: "/icons/pandas.svg" },
-  { name: "Scikit Learn", icon: "/icons/scikitlearn.svg" },
+  { name: "Python", icon: "/icons/Python.svg" },
+  { name: "NumPy", icon: "/icons/NumPy.svg" },
+  { name: "Pandas", icon: "/icons/Pandas.svg" },
+  { name: "Scikit Learn", icon: "/icons/ScikitLearn.svg" },
   { name: "TensorFlow", icon: "/icons/TensorFlow.svg" },
 
   { name: "C", icon: "/icons/C.svg" },
   { name: "Java", icon: "/icons/Java.svg" },
-  { name: "MySQL", icon: "/icons/mysql.svg" },
-  { name: "VS Code", icon: "/icons/vscode.svg" },
-  { name: "GitHub", icon: "/icons/github.svg" },
+  { name: "MySQL", icon: "/icons/MySQL.svg" },
+  { name: "VS Code", icon: "/icons/VSCode.svg" },
+  { name: "GitHub", icon: "/icons/GitHub.svg" },
 ];
 
 export default function Skills() {
