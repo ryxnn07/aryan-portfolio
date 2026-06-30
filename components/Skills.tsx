@@ -1,125 +1,132 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import {
-  Home,
-  User,
-  FolderOpen,
-  Award,
-  Code2,
-  GitBranch,
-  Mail,
-  Menu,
-  X,
-} from "lucide-react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
-const links = [
-  { icon: Home, label: "Home", href: "#home" },
-  { icon: User, label: "About", href: "#about" },
-  { icon: Code2, label: "Technology", href: "#skills" },
-  { icon: FolderOpen, label: "Projects", href: "#projects" },
-  { icon: Award, label: "Certificates", href: "#certificates" },
-  { icon: GitBranch, label: "GitHub", href: "#github" },
-  { icon: Mail, label: "Contact", href: "#contact" },
+const skills = [
+  { name: "Python", icon: "/icons/python.svg" },
+  { name: "NumPy", icon: "/icons/NumPy.svg" },
+  { name: "Pandas", icon: "/icons/Pandas.svg" },
+  { name: "Scikit Learn", icon: "/icons/scikitlearn.svg" },
+  { name: "TensorFlow", icon: "/icons/TensorFlow.svg" },
+
+  { name: "C", icon: "/icons/C.svg" },
+  { name: "Java", icon: "/icons/Java.svg" },
+  { name: "MySQL", icon: "/icons/MySQL.svg" },
+  { name: "VS Code", icon: "/icons/vscode.svg" },
+  { name: "GitHub", icon: "/icons/GitHub.svg" },
 ];
 
-export default function Sidebar() {
-  const [active, setActive] = useState("home");
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll("section[id]");
-
-      let current = "home";
-
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-
-        if (rect.top <= 150 && rect.bottom >= 150) {
-          current = section.id;
-        }
-      });
-
-      setActive(current);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    requestAnimationFrame(handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+export default function Skills() {
   return (
-    <>
-      {/* Mobile Navbar */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-[#050816]/90 backdrop-blur-xl border-b border-white/10">
-        <div className="flex items-center justify-between px-5 py-4">
-          <h1 className="text-2xl font-bold text-violet-500">
-            AS
-          </h1>
+    <section
+      id="skills"
+      className="glass-card rounded-3xl p-10"
+    >
+      {/* Heading */}
 
-          <button onClick={() => setOpen(!open)}>
-            {open ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
+      <p className="text-violet-400 uppercase tracking-[0.35em] text-sm font-semibold mb-3">
+        ● MY TECH STACK
+      </p>
 
-        {open && (
-          <nav className="pb-4 px-5 space-y-2">
-            {links.map((item) => {
-              const Icon = item.icon;
-              const id = item.href.replace("#", "");
+      <h2 className="text-6xl font-bold mb-4">
+        Techno
+        <span className="bg-gradient-to-r from-violet-400 to-fuchsia-500 bg-clip-text text-transparent">
+          logy
+        </span>
+      </h2>
 
-              return (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-xl transition ${
-                    active === id
-                      ? "bg-violet-600 text-white"
-                      : "hover:bg-white/10"
-                  }`}
-                >
-                  <Icon size={18} />
-                  {item.label}
-                </a>
-              );
-            })}
-          </nav>
-        )}
-      </header>
+      <p className="text-slate-400 text-lg max-w-2xl leading-8 mb-12">
+        Technologies and tools I use to build, learn and create
+        impactful solutions.
+      </p>
 
-      {/* Desktop Sidebar */}
-      <aside className="hidden lg:flex flex-col fixed left-0 top-0 w-64 h-screen border-r border-white/10 bg-[#050816]/95 backdrop-blur-xl z-40">
-        <div className="p-8">
-          <h1 className="text-5xl font-bold text-violet-500 mb-12">
-            AS
-          </h1>
+      {/* Skills */}
 
-          <nav className="space-y-3">
-            {links.map((item) => {
-              const Icon = item.icon;
-              const id = item.href.replace("#", "");
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-7">
 
-              return (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
-                    active === id
-                      ? "bg-violet-600 text-white"
-                      : "hover:bg-white/5"
-                  }`}
-                >
-                  <Icon size={18} />
-                  {item.label}
-                </a>
-              );
-            })}
-          </nav>
-        </div>
-      </aside>
-    </>
+        {skills.map((skill, index) => (
+
+          <motion.div
+            key={skill.name}
+            initial={{
+              opacity: 0,
+              y: 40,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.45,
+              delay: index * 0.05,
+            }}
+            whileHover={{
+              scale: 1.08,
+              rotate: [0, -2, 2, -2, 0],
+              transition: {
+                duration: 0.35,
+              },
+            }}
+            className="group"
+          >
+
+            <div
+              className="
+              relative
+              h-48
+              rounded-3xl
+              border
+              border-white/15
+              bg-white/[0.04]
+              backdrop-blur-xl
+              flex
+              flex-col
+              items-center
+              justify-center
+              overflow-hidden
+              transition-all
+              duration-300
+              hover:border-violet-400
+              hover:shadow-[0_0_35px_rgba(168,85,247,0.45)]
+            "
+            >
+
+              {/* Glow */}
+
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
+
+                <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-44 h-44 rounded-full bg-violet-500/20 blur-3xl" />
+
+              </div>
+
+              {/* Icon */}
+
+              <Image
+                src={skill.icon}
+                alt={skill.name}
+                width={72}
+                height={72}
+                className="relative z-10 object-contain"
+              />
+
+              {/* Name */}
+
+              <h3 className="relative z-10 mt-7 text-xl font-semibold">
+                {skill.name}
+              </h3>
+
+              {/* Underline */}
+
+              <div className="relative z-10 mt-4 w-12 h-[3px] rounded-full bg-violet-500 group-hover:w-20 transition-all duration-300"></div>
+
+            </div>
+
+          </motion.div>
+
+        ))}
+
+      </div>
+    </section>
   );
 }

@@ -17,7 +17,7 @@ const details = [
   {
     icon: Brain,
     title: "Specialization",
-    value: "AI & Machine Learning",
+    value: "Artificial Intelligence & ML",
   },
   {
     icon: MapPin,
@@ -35,56 +35,102 @@ export default function About() {
   return (
     <section
       id="about"
-      className="glass-card rounded-3xl p-8 lg:p-12"
+      className="glass-card rounded-3xl p-6 sm:p-8 lg:p-12 overflow-hidden relative"
     >
+      {/* Background Glow */}
+      <div className="absolute -right-24 top-10 w-72 h-72 bg-violet-600/10 blur-[120px] rounded-full"></div>
+
       {/* Heading */}
-      <div className="mb-10">
-        <p className="text-violet-400 uppercase tracking-[0.3em] text-sm font-semibold">
-          Get To Know Me
+
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mb-12 relative z-10"
+      >
+        <p className="text-violet-400 uppercase tracking-[0.35em] text-sm font-semibold">
+          GET TO KNOW ME
         </p>
 
-        <h2 className="text-5xl font-bold mt-3">
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mt-3">
           About{" "}
           <span className="bg-gradient-to-r from-violet-400 to-fuchsia-500 bg-clip-text text-transparent">
             Me
           </span>
         </h2>
-      </div>
+      </motion.div>
 
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-12 items-center relative z-10">
 
-        {/* Left Content */}
+        {/* LEFT */}
+
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
+          initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-slate-300 text-lg leading-9">
-            I'm <span className="text-violet-400 font-semibold">Aryan Saxena</span>,
-            a passionate Computer Science student specializing in
-            <span className="text-violet-400 font-semibold"> Data Science</span>.
-
-            <br /><br />
-
-            I enjoy building intelligent web applications, solving
-            real-world problems with
-            <span className="text-violet-400 font-semibold">
-              {" "}Machine Learning
-            </span>,
-            and continuously learning modern technologies.
-
-            <br /><br />
-
-            My goal is to become an
-            <span className="text-violet-400 font-semibold">
-              {" "}AI Engineer
+          <h3 className="text-2xl sm:text-3xl font-bold mb-6">
+            Passionate about building
+            <span className="text-violet-400">
+              {" "}AI-powered solutions.
             </span>
-            {" "}who builds products that create meaningful impact.
+          </h3>
+
+          <p className="text-slate-300 text-base sm:text-lg leading-8">
+            I'm{" "}
+            <span className="text-violet-400 font-semibold">
+              Aryan Saxena
+            </span>
+            , a Computer Science student specializing in{" "}
+            <span className="text-violet-400 font-semibold">
+              Data Science
+            </span>
+            .
+
+            <br />
+            <br />
+
+            I enjoy transforming ideas into intelligent applications
+            using Machine Learning, Python and modern web technologies.
+
+            <br />
+            <br />
+
+            My long-term goal is to become an{" "}
+            <span className="text-violet-400 font-semibold">
+              AI Engineer
+            </span>{" "}
+            who builds impactful products that solve real-world
+            problems and improve people's lives.
           </p>
+
+          <div className="flex flex-wrap gap-3 mt-8">
+
+            <span className="px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/30 text-violet-300 text-sm">
+              AI
+            </span>
+
+            <span className="px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/30 text-violet-300 text-sm">
+              Machine Learning
+            </span>
+
+            <span className="px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/30 text-violet-300 text-sm">
+              Python
+            </span>
+
+            <span className="px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/30 text-violet-300 text-sm">
+              Data Science
+            </span>
+
+          </div>
+
         </motion.div>
 
-        {/* Right Cards */}
-        <div className="grid sm:grid-cols-2 gap-5">
+        {/* RIGHT */}
+
+        <div className="grid grid-cols-2 gap-5">
 
           {details.map((item, index) => {
             const Icon = item.icon;
@@ -92,26 +138,37 @@ export default function About() {
             return (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 25 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{
                   delay: index * 0.1,
                   duration: 0.5,
                 }}
-                className="bg-slate-900/80 border border-white/10 rounded-2xl p-6 hover:border-violet-500 hover:-translate-y-1 transition-all"
+                whileHover={{
+                  scale: 1.05,
+                  y: -8,
+                }}
+                className="group rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 transition-all duration-300 hover:border-violet-500 hover:shadow-[0_0_35px_rgba(168,85,247,0.25)]"
               >
-                <Icon
-                  size={32}
-                  className="text-violet-400 mb-4"
-                />
 
-                <h3 className="font-semibold text-lg">
+                <div className="w-14 h-14 rounded-2xl bg-violet-500/10 flex items-center justify-center mb-5 group-hover:bg-violet-500/20 transition">
+
+                  <Icon
+                    size={28}
+                    className="text-violet-400"
+                  />
+
+                </div>
+
+                <h3 className="text-lg font-semibold">
                   {item.title}
                 </h3>
 
-                <p className="text-slate-400 mt-2">
+                <p className="text-slate-400 mt-2 text-sm leading-6">
                   {item.value}
                 </p>
+
               </motion.div>
             );
           })}

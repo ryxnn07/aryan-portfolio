@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="glass-card rounded-3xl min-h-[680px] lg:min-h-[720px] p-6 sm:p-8 lg:p-16 overflow-hidden relative flex items-center"
+      className="glass-card rounded-3xl min-h-[620px] lg:min-h-[720px] p-6 sm:p-8 lg:p-16 overflow-hidden relative flex items-center"
     >
       {/* Purple Glow */}
       <div className="absolute top-1/2 right-28 -translate-y-1/2 w-[220px] h-[220px] sm:w-[300px] sm:h-[300px] lg:w-[420px] lg:h-[420px] bg-violet-600/20 blur-[150px] rounded-full"></div>
@@ -84,12 +84,12 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
-          className="relative flex items-center justify-center -translate-x-14"
+          className="relative flex items-center justify-center lg:-translate-x-14"
         >
           {/* Ring */}
-          <div className="absolute w-[300px] h-[300px] sm:w-[420px] sm:h-[420px] lg:w-[620px] lg:h-[620px] rounded-full border border-violet-500/15"></div>
+          <div className="hidden lg:block absolute w-[620px] h-[620px] rounded-full border border-violet-500/15"></div>
 
-<div className="absolute w-[520px] h-[520px] rounded-full border border-violet-500/10"></div>
+<div className="hidden md:block absolute w-[520px] h-[520px] rounded-full border border-violet-500/10"></div>
 
 <div className="absolute w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] lg:w-[420px] lg:h-[420px] rounded-full border border-violet-500/10"></div>
 
