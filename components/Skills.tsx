@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const skills = [
-  { name: "Python", icon: "/icons/python.svg" },
+  { name: "Python", icon: "/icons/Python.svg" },
   { name: "NumPy", icon: "/icons/NumPy.svg" },
   { name: "Pandas", icon: "/icons/Pandas.svg" },
   { name: "Scikit Learn", icon: "/icons/scikitlearn.svg" },
