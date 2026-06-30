@@ -19,7 +19,7 @@ export default function Home() {
 
   <Sidebar />
 
-  <div className="flex-1 lg:ml-64 p-4 md:p-6 lg:p-8 space-y-8">
+  <div className="flex-1 lg:ml-64 pt-24 lg:pt-8 p-4 md:p-6 lg:p-8 space-y-8">
 
   <SectionWrapper>
     <Hero />

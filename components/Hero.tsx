@@ -7,12 +7,12 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="glass-card rounded-3xl min-h-[720px] p-10 lg:p-16 overflow-hidden relative flex items-center"
+      className="glass-card rounded-3xl min-h-[680px] lg:min-h-[720px] p-6 sm:p-8 lg:p-16 overflow-hidden relative flex items-center"
     >
       {/* Purple Glow */}
-      <div className="absolute top-1/2 right-28 -translate-y-1/2 w-[420px] h-[420px] bg-violet-600/20 blur-[150px] rounded-full"></div>
+      <div className="absolute top-1/2 right-28 -translate-y-1/2 w-[220px] h-[220px] sm:w-[300px] sm:h-[300px] lg:w-[420px] lg:h-[420px] bg-violet-600/20 blur-[150px] rounded-full"></div>
 
-      <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-center relative z-10 w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-14 lg:gap-8 items-center relative z-10 w-full">
 
         {/* LEFT */}
         <motion.div
@@ -24,18 +24,18 @@ export default function Hero() {
             Hi, I'm
           </div>
 
-          <h1 className="text-6xl lg:text-8xl font-bold leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold leading-tight">
             Aryan{" "}
             <span className="bg-gradient-to-r from-violet-400 to-purple-600 bg-clip-text text-transparent">
               Saxena
             </span>
           </h1>
 
-          <h2 className="text-violet-400 text-3xl mt-6 font-semibold">
+          <h2 className="text-violet-400 text-xl sm:text-2xl lg:text-3xl mt-6 font-semibold">
             Aspiring Data Scientist
           </h2>
 
-          <p className="text-slate-400 mt-6 text-xl leading-9 max-w-xl">
+          <p className="text-slate-400 mt-6 text-base sm:text-lg lg:text-xl leading-9 max-w-xl">
             AI Enthusiast • Python Developer
             <br />
             Building intelligent systems and AI-powered
@@ -43,7 +43,7 @@ export default function Hero() {
             Data Science.
           </p>
 
-          <div className="flex gap-4 mt-10">
+          <div className="flex flex-col sm:flex-row gap-4 mt-10">
 
             <a
               href="#projects"
@@ -69,7 +69,7 @@ export default function Hero() {
 
           </div>
 
-          <div className="flex items-center gap-3 mt-10">
+          <div className="flex flex-wrap items-center gap-3 mt-8">
             <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
 
             <span className="text-slate-400">
@@ -87,20 +87,20 @@ export default function Hero() {
           className="relative flex items-center justify-center -translate-x-14"
         >
           {/* Ring */}
-          <div className="absolute w-[620px] h-[620px] rounded-full border border-violet-500/15"></div>
+          <div className="absolute w-[300px] h-[300px] sm:w-[420px] sm:h-[420px] lg:w-[620px] lg:h-[620px] rounded-full border border-violet-500/15"></div>
 
 <div className="absolute w-[520px] h-[520px] rounded-full border border-violet-500/10"></div>
 
-<div className="absolute w-[420px] h-[420px] rounded-full border border-violet-500/10"></div>
+<div className="absolute w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] lg:w-[420px] lg:h-[420px] rounded-full border border-violet-500/10"></div>
 
           {/* Glow */}
-          <div className="absolute w-[420px] h-[420px] rounded-full bg-violet-600/30 blur-[120px]"></div>
+          <div className="absolute w-[220px] h-[220px] sm:w-[300px] sm:h-[300px] lg:w-[420px] lg:h-[420px] rounded-full bg-violet-600/30 blur-[120px]"></div>
 
           {/* Left Star */}
           <motion.div
             animate={{ y: [-8, 8, -8] }}
             transition={{ repeat: Infinity, duration: 5 }}
-            className="absolute left-0 top-28 text-5xl text-violet-400"
+            className="absolute left-0 top-28 text-3xl lg:text-5xl text-violet-400"
           >
             ✦
           </motion.div>
@@ -109,7 +109,7 @@ export default function Hero() {
           <motion.div
             animate={{ y: [8, -8, 8] }}
             transition={{ repeat: Infinity, duration: 5 }}
-            className="absolute right-2 top-20 text-5xl text-violet-400"
+            className="absolute right-2 top-20 text-3xl lg:text-5xl text-violet-400"
           >
             ✦
           </motion.div>
@@ -118,15 +118,15 @@ export default function Hero() {
           <motion.div
             animate={{ y: [-10, 10, -10] }}
             transition={{ repeat: Infinity, duration: 5 }}
-            className="relative flex items-center justify-center"
+            className="relative flex items-center justify-center lg:-translate-x-14"
           >
             <Image
               src="/avatar.png"
               alt="Aryan"
-              width={500}
-              height={500}
-              priority
-              className="relative z-10 drop-shadow-2xl"
+             width={500}
+             height={500}
+             priority
+             className="relative z-10 drop-shadow-2xl w-[240px] sm:w-[320px] lg:w-[500px] h-auto"
             />
           </motion.div>
 
